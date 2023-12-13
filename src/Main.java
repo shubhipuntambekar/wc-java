@@ -19,25 +19,44 @@ public class Main {
             if (Objects.equals(command, "-c")) {
                 // calculates number of bytes in the file
                 C c = new C();
-                System.out.println(c.execute(fileName) + " " + fileName);
+                if (fileName != null)
+                    System.out.println(c.execute(fileName) + " " + fileName);
+                else
+                    System.out.println(c.execute());
+
             } else if (Objects.equals(command, "-l")) {
                 // calculates number of lines in the file
                 L l = new L();
-                System.out.println(l.execute(fileName) + " " + fileName);
+                if (fileName != null)
+                    System.out.println(l.execute(fileName) + " " + fileName);
+                else
+                    System.out.println(l.execute());
+
             } else if (Objects.equals(command, "-w")) {
                 // calculates number of words in the file
                 W w = new W();
-                System.out.println(w.execute(fileName) + " " + fileName);
+                if (fileName != null)
+                    System.out.println(w.execute(fileName) + " " + fileName);
+                else
+                    System.out.println(w.execute());
+
             } else if (Objects.equals(command, "-m")) {
                 // calculates number of characters in the file
                 M m = new M();
-                System.out.println(m.execute(fileName) + " " + fileName);
+                if (fileName != null)
+                    System.out.println(m.execute(fileName) + " " + fileName);
+                else
+                    System.out.println(m.execute());
+
             } else {
                 // calculates -c -l -w
                 C c = new C();
                 L l = new L();
                 W w = new W();
-                System.out.println(c.execute(fileName) + " " + l.execute(fileName) + " " + w.execute(fileName) + " " +fileName);
+                if (fileName != null)
+                    System.out.println(c.execute(fileName) + " " + l.execute(fileName) + " " + w.execute(fileName) + " " +fileName);
+                else
+                    System.out.println(c.execute() + " " + l.execute() + " " + w.execute());
             }
         }
     }
